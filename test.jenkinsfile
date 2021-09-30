@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage("Say Hello") {
             steps {
-                echo "Hello World!"
+                echo "Hello World! From branch $BRANCH_NAME"
             }
         }
 
