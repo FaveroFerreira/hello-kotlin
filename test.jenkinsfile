@@ -1,23 +1,26 @@
 pipeline {
     agent any
 
+    environment {
+        BRANCH_NAME = ""
+    }
+
     stages {
         stage("Current Branch") {
             steps {
-                sh "git branch"
+                echo "Building branch ${BRANCH_NAME}"
             }
         }
 
         stage("Build") {
             steps {
-                sh "./gradlew clean build"
+                echo "Executando build..."
             }
         }
 
         stage("Dockerize") {
             steps {
-                sh "docker build -t hello-kotlin:latest ."
-                echo "Pushing to dockerhub..."
+                echo "Executando containerização..."
             }
         }
 
