@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    parameters {
+        string(name: "BRANCH_NAME", defaultValue: "master", description: "Branch a ser construida!")
+    }
+
     stages {
         stage("Say Hello") {
             steps {
