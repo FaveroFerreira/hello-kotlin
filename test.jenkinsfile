@@ -21,7 +21,7 @@ pipeline {
 
         stage("Flyway") {
             when {
-                environment name: "RUN_MIGRATIONS", value: true
+                environment name: "RUN_MIGRATIONS", value: "true"
             }
             steps {
                 echo "Executando migrações de banco de dados..."
