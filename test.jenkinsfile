@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'BRANCH_NAME', defaultValue: 'master', description: 'Branch a ser buildada')
+        string(name: "BRANCH_NAME", defaultValue: "master", description: "Branch a ser buildada")
+        booleanParam(name: "RUN_MIGRATIONS", defaultValue: false, description: "Executar as migrações de Bd")
     }
 
     stages {
