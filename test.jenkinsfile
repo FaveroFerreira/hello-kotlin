@@ -19,6 +19,15 @@ pipeline {
             }
         }
 
+        stage("Flyway") {
+            when {
+                RUN_MIGRATIONS == true
+            }
+            steps {
+                echo "Executando migrações de banco de dados..."
+            }
+        }
+
         stage("Dockerize") {
             steps {
                 echo "Executando containerização..."
